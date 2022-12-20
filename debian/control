@@ -1,0 +1,90 @@
+Source: elinks
+Section: web
+Priority: optional
+Maintainer: أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>
+Build-Depends: debhelper-compat (= 13), libtre-dev, libgnutls28-dev, libgcrypt20-dev, libidn11-dev,
+	libfsplib-dev, libgpm-dev [linux-any],
+	liblua5.1-dev, libbz2-dev, libexpat1-dev,
+	libperl-dev, libkrb5-dev, gettext,
+	xmlto, docbook-utils, pkg-config,
+  liblzma-dev,
+  libncurses5-dev
+  ,libev-libevent-dev
+  ,python3
+Build-Conflicts: libgc-dev
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Homepage: http://elinks.cz/
+Vcs-Git: https://salsa.debian.org/aelmahmoudy/elinks.git
+Vcs-Browser: https://salsa.debian.org/aelmahmoudy/elinks
+
+Package: elinks
+Architecture: any
+Depends: ${shlibs:Depends}, elinks-data (= ${source:Version}), ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Suggests: elinks-doc
+Provides: www-browser
+Description: advanced text-mode WWW browser
+ ELinks is a feature-rich program for browsing the web in text mode.  It is
+ like enhanced Lynx and Links.  The most noteworthy features of ELinks are:
+ .
+  * Lots of protocols (local files, finger, HTTP(S), FTP, IPv4/6 etc.)
+  * Internationalized domain names
+  * Persistent cookies, HTTP authentication and proxy authentication
+  * Tabbed browsing, good looking menus and dialogs, and key-binding manager
+  * History browsing and typeahead searches
+  * Forms history and completion, and history in commonly used input dialogs
+  * CSS support and support for browser scripting (Perl, Lua, Guile etc.)
+  * Tables and frames rendering, and configurable color support
+  * Compressed and background (non-blocking) downloads, and download resuming
+ .
+ This package is based on felinks fork, since original elinks seems to be no
+ longer maintained.
+
+Package: elinks-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Breaks: elinks (<< 0.11.3-1), elinks-lite (<< 0.12~pre6-3)
+Replaces: elinks (<< 0.11.3-1), elinks-lite (<< 0.12~pre6-3)
+Description: advanced text-mode WWW browser - data files
+ ELinks is a feature-rich program for browsing the web in text mode.  It is
+ like enhanced Lynx and Links.  The most noteworthy features of ELinks are:
+ .
+  * Lots of protocols (local files, finger, HTTP(S), FTP, IPv4/6 etc.)
+  * Internationalized domain names
+  * Persistent cookies, HTTP authentication and proxy authentication
+  * Tabbed browsing, good looking menus and dialogs, and key-binding manager
+  * History browsing and typeahead searches
+  * Forms history and completion, and history in commonly used input dialogs
+  * CSS support and support for browser scripting (Perl, Lua, Guile etc.)
+  * Tables and frames rendering, and configurable color support
+  * Compressed and background (non-blocking) downloads, and download resuming
+ .
+ This package contains the data files that are necessary to use ELinks.
+
+Package: elinks-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Suggests: elinks
+Breaks: elinks (<< 0.11.3-1), elinks-lite (<< 0.11.3-1)
+Replaces: elinks (<< 0.11.3-1), elinks-lite (<< 0.11.3-1)
+Description: advanced text-mode WWW browser - documentation
+ ELinks is a feature-rich program for browsing the web in text mode.  It is
+ like enhanced Lynx and Links.  The most noteworthy features of ELinks are:
+ .
+  * Lots of protocols (local files, finger, HTTP(S), FTP, IPv4/6 etc.)
+  * Internationalized domain names
+  * Persistent cookies, HTTP authentication and proxy authentication
+  * Tabbed browsing, good looking menus and dialogs, and key-binding manager
+  * History browsing and typeahead searches
+  * Forms history and completion, and history in commonly used input dialogs
+  * CSS support and support for browser scripting (Perl, Lua, Guile etc.)
+  * Tables and frames rendering, and configurable color support
+  * Compressed and background (non-blocking) downloads, and download resuming
+ .
+ This package contains the documentation and manuals for ELinks.
